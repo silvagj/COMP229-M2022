@@ -1,0 +1,11 @@
+{
+  "name": "comp229-s2022-week3",
+  "version": "0.0.1",
+  "description": "demo project for comp229 in the m2022 semester for week3",
+  "main": "server.js",
+  "author": "Silvana Gjini",
+  "license": "MIT",
+  "dependencies": {
+    "mime-types": "^2.1.35"
+  }
+}
