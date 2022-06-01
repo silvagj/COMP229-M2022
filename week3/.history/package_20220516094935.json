@@ -1,8 +1,0 @@
-{
-  "name": "comp229-s2022-week2",
-  "version": "0.0.1",
-  "description": "demo project for comp229 in the s2022 semester at Centennial College",
-  "main": "server.js",
-  "author": "Silvana Gjini",
-  "license": "MIT"
-}
