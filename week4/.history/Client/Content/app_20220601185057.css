@@ -1,0 +1,13 @@
+/* custom css here */
+body {
+    background-color: #f4f0f0;
+    font-family:helvetica-w01-light,helvetica-w02-light,sans-serif
+}
+
+.navbar-custom {
+    background-color: #bdb2af;  
+}
+
+.title {
+    background-color:#f7f7f7;
+}

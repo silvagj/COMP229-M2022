@@ -1,0 +1,9 @@
+/* custom css here */
+body {
+    background-color: #f7f7f7;
+}
+
+.navbar-custom {
+    background-color: #f2ede9;
+    color: #616163;
+}
