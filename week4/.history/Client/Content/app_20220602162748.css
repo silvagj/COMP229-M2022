@@ -1,0 +1,32 @@
+/*  
+Filename: app.css
+Student Name: Silvana Gjini
+StudentID: 301201477
+Date: 2-Jun-2022
+*/
+
+/* custom css here */
+body {
+    background-color: #f4f0f0;
+    font-family:helvetica-w01-light,helvetica-w02-light,sans-serif
+}
+
+/* Customizing navbar background color */
+.navbar-custom {
+    background-color: #bdb2af;  
+}
+
+/* Customizing homepage welcome note background color */
+
+.welcome-custom{
+    background-color: #bdb2af;
+
+}
+
+/* Customizing homepage background image */
+.background-custom {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center; 
+}
+
