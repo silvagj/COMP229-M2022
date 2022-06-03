@@ -18,14 +18,7 @@ body {
 
 /* Customizing homepage welcome note background color */
 
-.welcome-custom {
-    background-color: #bdb2af;
-
-}
-
-/* Customizing my services list background color */
-
-.my-services{
+.welcome-custom .services{
     background-color: #bdb2af;
 
 }
