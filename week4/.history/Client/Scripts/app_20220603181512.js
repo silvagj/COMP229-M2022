@@ -8,12 +8,15 @@
  */
 const button = document.getElementById('send');
 button?.addEventListener('click', function send() {
-    //save form information
     let name = document.getElementById('name').value;
     let email = document.getElementById('email').value;
     let subject = document.getElementById('subject').value;
     let message = document.getElementById('message').value;
-    //redirect to homepage
     window.location.href = './home';
+    console.log('Information saved');
+    console.log('Name: ' + name);
+    console.log('Email: ' + email);
+    console.log('Subject: ' + subject);
+    console.log('Message: ' + message);
 });
 //# sourceMappingURL=app.js.map

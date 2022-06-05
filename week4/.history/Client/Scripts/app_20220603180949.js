@@ -6,14 +6,15 @@
  *    Date:  2-Jun-2022
  *
  */
+//IIFE
 const button = document.getElementById('send');
 button?.addEventListener('click', function send() {
-    //save form information
     let name = document.getElementById('name').value;
     let email = document.getElementById('email').value;
     let subject = document.getElementById('subject').value;
     let message = document.getElementById('message').value;
-    //redirect to homepage
-    window.location.href = './home';
+    console.log('button clicked');
+    console.log(name);
+    console.log(email);
 });
 //# sourceMappingURL=app.js.map

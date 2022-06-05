@@ -31,7 +31,7 @@
                     <p class="w-responsive mx-auto text-secondary p-4">You can reach me out directly
                         below and leave your contact details. 
                         I am looking forward to hearing from you!</p>
-                    <form id="contact-form" name="contact-form" >
+                    <form id="contact-form" name="contact-form" action="mail.php" method="POST">
 
                                 <div class="md-form p-2">
                                     <input type="text" id="name" name="name" placeholder="Your name" class="form-control">
@@ -58,7 +58,7 @@
                     </form>
 
                     <div class="text-center text-md-left p-2">
-                        <a class="btn btn-secondary" id="send">Send</a>
+                        <a class="btn btn-secondary" onclick="Start();">Send</a>
                     </div>
                     <div class="status"></div>
                 </div>
