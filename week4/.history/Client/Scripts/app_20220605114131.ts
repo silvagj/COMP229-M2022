@@ -9,7 +9,7 @@
     const button = document.getElementById('send');
 
     button?.addEventListener('click', function send() {
-      //capture form information
+      //save form information
       let name =(document.getElementById('name') as HTMLInputElement).value
       let email =(document.getElementById('email') as HTMLInputElement).value
       let phone =(document.getElementById('phone') as HTMLInputElement).value

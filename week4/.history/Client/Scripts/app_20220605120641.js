@@ -7,8 +7,9 @@
  *
  */
 const button = document.getElementById('send');
+//Creating an event listener for the send button in contact page 
 button?.addEventListener('click', function send() {
-    //capture form information
+    //save form information
     let name = document.getElementById('name').value;
     let email = document.getElementById('email').value;
     let phone = document.getElementById('phone').value;
