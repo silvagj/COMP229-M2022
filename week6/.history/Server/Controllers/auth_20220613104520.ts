@@ -44,7 +44,7 @@ export function DisplayRegisterPage(req: express.Request, res: express.Response,
         return res.redirect('/movie-list');
       });
 
-    })(req, res, next);
+    })
   }
 
   export function ProcessRegisterPage(req: express.Request, res: express.Response, next: express.NextFunction) 

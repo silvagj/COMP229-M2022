@@ -5,5 +5,5 @@ import { AuthGuard } from '../Util';
 
 import {DisplayMovieList} from '../Controllers/movie-list';
 /* Temporary */
-router.get('/movie-list', AuthGuard, DisplayMovieList);
+router.get('/movie-list', DisplayMovieList);
 export default router;
