@@ -19,7 +19,5 @@ router.get('/projects', index_1.DisplayProjectPage);
 router.get('/services', index_1.DisplayServicePage);
 /* Display Contact page. */
 router.get('/contact', index_1.DisplayContactsPage);
-/* Temporary */
-router.get('/movie-list', index_1.DisplayMovieList);
 exports.default = router;
 //# sourceMappingURL=index.js.map

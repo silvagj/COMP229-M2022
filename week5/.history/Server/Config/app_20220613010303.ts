@@ -39,7 +39,7 @@ app.use(express.static(path.join(__dirname, '../../node_modules')));
 
 // Using Routes
 app.use('/', indexRouter);
-app.use('/', movieListRouter);
+app.unsubscribe('/', movieListRouter);
 //app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler

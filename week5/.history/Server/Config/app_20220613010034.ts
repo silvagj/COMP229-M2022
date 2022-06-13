@@ -8,8 +8,8 @@ import mongoose from 'mongoose';
 
 //Import the router data
 //import usersRouter from './Routes/users';
-import indexRouter from '../Routes/index';   // top-level routes
-import movieListRouter from '../Routes/movie-list';  //movie-list routs
+import indexRouter from '../Routes/index';
+import movieListRouter from '../Routes/movie-list';
 
 const app = express();
 
@@ -36,10 +36,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../../Client')));
 app.use(express.static(path.join(__dirname, '../../node_modules')));
-
-// Using Routes
 app.use('/', indexRouter);
-app.use('/', movieListRouter);
 //app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
