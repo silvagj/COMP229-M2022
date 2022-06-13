@@ -6,6 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 //Step1 Import mongoose
 const mongoose_1 = __importDefault(require("mongoose"));
 const Schema = mongoose_1.default.Schema; //alias for mongoose.Schema
+const passport_local_mongoose_1 = __importDefault(require("passport-local-mongoose"));
 //Step2 Create a schema that matches the data
 const UserSchema = new Schema({
     DisplayName: String,
@@ -22,7 +23,9 @@ const UserSchema = new Schema({
 }, {
     collection: "users"
 });
-//Step3 Create a Model using the Schema
+//Step3 auth - plugin passport local mongoose 
+UserSchema.plugin(passport_local_mongoose_1.default);
+//Step4 auth - Create a Model using the Schema
 const Model = mongoose_1.default.model("User", UserSchema);
 //Step4 Export the Model -- This makes the file a module
 exports.default = Model;

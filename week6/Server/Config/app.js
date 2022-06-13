@@ -33,10 +33,21 @@ const cookie_parser_1 = __importDefault(require("cookie-parser"));
 const morgan_1 = __importDefault(require("morgan"));
 //Step1 import db package 
 const mongoose_1 = __importDefault(require("mongoose"));
+//Step1 for auth - import module 
+const express_session_1 = __importDefault(require("express-session"));
+const passport_1 = __importDefault(require("passport"));
+const passport_local_1 = __importDefault(require("passport-local"));
+const connect_flash_1 = __importDefault(require("connect-flash"));
+//modules for JWT support
+const cors_1 = __importDefault(require("cors"));
+//Step2 for auth - define authentication objects
+let localStrategy = passport_local_1.default.Strategy; // alias
+//Step3 for auth - import the user model
+const user_1 = __importDefault(require("../Models/user"));
 //Import the router data
-//import usersRouter from './Routes/users';
 const index_1 = __importDefault(require("../Routes/index")); // top-level routes
 const movie_list_1 = __importDefault(require("../Routes/movie-list")); //movie-list routs
+const auth_1 = __importDefault(require("../Routes/auth"));
 const app = (0, express_1.default)();
 //Step2 Complete DB configuration
 const DBConfig = __importStar(require("./db"));
@@ -58,9 +69,27 @@ app.use(express_1.default.urlencoded({ extended: false }));
 app.use((0, cookie_parser_1.default)());
 app.use(express_1.default.static(path_1.default.join(__dirname, '../../Client')));
 app.use(express_1.default.static(path_1.default.join(__dirname, '../../node_modules')));
+app.use((0, cors_1.default)()); // add CORS (cross-origin resource sharing)
+//Step4 for auth - add express session
+app.use((0, express_session_1.default)({
+    secret: DBConfig.Secret,
+    saveUninitialized: false,
+    resave: false
+}));
+//Step5 auth -setup Flash
+app.use((0, connect_flash_1.default)());
+//Step5 auth - initialize passport session
+app.use(passport_1.default.initialize());
+app.use(passport_1.default.session());
+//Step7 auth - implement Auth security
+passport_1.default.use(user_1.default.createStrategy());
+//Step8 auth - User serialization and deserialization
+passport_1.default.serializeUser(user_1.default.serializeUser());
+passport_1.default.deserializeUser(user_1.default.deserializeUser());
 // Using Routes
 app.use('/', index_1.default);
 app.use('/', movie_list_1.default);
+app.use('/', auth_1.default);
 //app.use('/users', usersRouter);
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
