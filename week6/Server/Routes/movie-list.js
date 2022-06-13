@@ -7,7 +7,6 @@ const express_1 = __importDefault(require("express"));
 const router = express_1.default.Router();
 const Util_1 = require("../Util");
 const movie_list_1 = require("../Controllers/movie-list");
-/* Temporary */
 router.get('/movie-list', Util_1.AuthGuard, movie_list_1.DisplayMovieList);
 exports.default = router;
 //# sourceMappingURL=movie-list.js.map

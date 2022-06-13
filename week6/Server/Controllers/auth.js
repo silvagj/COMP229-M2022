@@ -4,34 +4,43 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ProcessLogoutPage = exports.ProcessRegisterPage = exports.ProcessLoginPage = exports.DisplayRegisterPage = exports.DisplayLoginPage = void 0;
-//need passport functionality
+// need passport functionality
 const passport_1 = __importDefault(require("passport"));
-//Include the User model for authentication function
+// need to include the User model for authentication functions
 const user_1 = __importDefault(require("../Models/user"));
+// import the DisplayName Utility method
+const Util_1 = require("../Util");
+// Display Functions
 function DisplayLoginPage(req, res, next) {
-    res.render('index', { title: 'Login', page: 'login', messages: req.flash('loginMessage'), displayName: '' });
+    if (!req.user) {
+        return res.render('index', { title: 'Login', page: 'login', messages: req.flash('loginMessage'), displayName: (0, Util_1.UserDisplayName)(req) });
+    }
+    return res.redirect('/movie-list');
 }
 exports.DisplayLoginPage = DisplayLoginPage;
 function DisplayRegisterPage(req, res, next) {
-    res.render('index', { title: 'Register', page: 'register', messages: req.flash('loginMessage'), displayName: '' });
+    if (!req.user) {
+        return res.render('index', { title: 'Register', page: 'register', messages: req.flash('registerMessage'), displayName: (0, Util_1.UserDisplayName)(req) });
+    }
+    return res.redirect('/movie-list');
 }
 exports.DisplayRegisterPage = DisplayRegisterPage;
-//Processing functions
+// Processing Functions
 function ProcessLoginPage(req, res, next) {
     passport_1.default.authenticate('local', function (err, user, info) {
-        //are there server errors?
+        // are there server errors?
         if (err) {
             console.error(err);
             res.end(err);
         }
-        //are there login errors?
+        // are there login errors?
         if (!user) {
             req.flash('loginMessage', 'Authentication Error!');
             return res.redirect('/login');
         }
-        //no problems - we have good username and password
+        // no problems - we have a good username and password
         req.logIn(user, function (err) {
-            //are there db errors?
+            // are there db errors?
             if (err) {
                 console.error(err);
                 res.end(err);
@@ -69,7 +78,13 @@ function ProcessRegisterPage(req, res, next) {
 }
 exports.ProcessRegisterPage = ProcessRegisterPage;
 function ProcessLogoutPage(req, res, next) {
-    req.logOut();
+    req.logOut(function (err) {
+        if (err) {
+            console.error(err);
+            res.end(err);
+        }
+        console.log("User Logged Out");
+    });
     res.redirect('/login');
 }
 exports.ProcessLogoutPage = ProcessLogoutPage;

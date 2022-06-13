@@ -14,10 +14,10 @@ router.get('/home', index_1.DisplayHomePage);
 /* Display about page. */
 router.get('/about', index_1.DisplayAboutPage);
 /* Display projects page. */
-router.get('/projects', index_1.DisplayProjectPage);
+router.get('/projects', index_1.DisplayProjectsPage);
 /* Display services page. */
-router.get('/services', index_1.DisplayServicePage);
+router.get('/services', index_1.DisplayServicesPage);
 /* Display Contact page. */
-router.get('/contact', index_1.DisplayContactsPage);
+router.get('/contact', index_1.DisplayContactPage);
 exports.default = router;
 //# sourceMappingURL=index.js.map

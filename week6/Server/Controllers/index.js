@@ -1,24 +1,25 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DisplayContactsPage = exports.DisplayServicePage = exports.DisplayProjectPage = exports.DisplayAboutPage = exports.DisplayHomePage = void 0;
+exports.DisplayContactPage = exports.DisplayServicesPage = exports.DisplayProjectsPage = exports.DisplayAboutPage = exports.DisplayHomePage = void 0;
+const Util_1 = require("../Util");
 function DisplayHomePage(req, res, next) {
-    res.render('index', { title: 'Home', page: 'home', displayName: '' });
+    res.render('index', { title: 'Home', page: 'home', displayName: (0, Util_1.UserDisplayName)(req) });
 }
 exports.DisplayHomePage = DisplayHomePage;
 function DisplayAboutPage(req, res, next) {
-    res.render('index', { title: 'About Us', page: 'about', displayName: '' });
+    res.render('index', { title: 'About Us', page: 'about', displayName: (0, Util_1.UserDisplayName)(req) });
 }
 exports.DisplayAboutPage = DisplayAboutPage;
-function DisplayProjectPage(req, res, next) {
-    res.render('index', { title: 'My Projects', page: 'projects', displayName: '' });
+function DisplayProjectsPage(req, res, next) {
+    res.render('index', { title: 'Our Projects', page: 'projects', displayName: (0, Util_1.UserDisplayName)(req) });
 }
-exports.DisplayProjectPage = DisplayProjectPage;
-function DisplayServicePage(req, res, next) {
-    res.render('index', { title: 'Services', page: 'services', displayName: '' });
+exports.DisplayProjectsPage = DisplayProjectsPage;
+function DisplayServicesPage(req, res, next) {
+    res.render('index', { title: 'Our Services', page: 'services', displayName: (0, Util_1.UserDisplayName)(req) });
 }
-exports.DisplayServicePage = DisplayServicePage;
-function DisplayContactsPage(req, res, next) {
-    res.render('index', { title: 'Contact', page: 'contact', displayName: '' });
+exports.DisplayServicesPage = DisplayServicesPage;
+function DisplayContactPage(req, res, next) {
+    res.render('index', { title: 'Contact Us', page: 'contact', displayName: (0, Util_1.UserDisplayName)(req) });
 }
-exports.DisplayContactsPage = DisplayContactsPage;
+exports.DisplayContactPage = DisplayContactPage;
 //# sourceMappingURL=index.js.map

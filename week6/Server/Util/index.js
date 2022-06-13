@@ -10,7 +10,7 @@ function UserDisplayName(req) {
     return '';
 }
 exports.UserDisplayName = UserDisplayName;
-//helper middleware function for guarding secure locations
+// helper middleware function for guarding secure locations
 function AuthGuard(req, res, next) {
     if (!req.isAuthenticated()) {
         return res.redirect('/login');
