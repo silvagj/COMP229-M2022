@@ -1,7 +1,13 @@
 {
+<<<<<<< HEAD
   "name": "comp229-s2022-week5",
   "version": "0.0.4",
   "description": "demo project for comp229 in the m2022 semester for week5",
+=======
+  "name": "comp229-s2022-week4",
+  "version": "0.0.3",
+  "description": "demo project for comp229 in the m2022 semester for week4",
+>>>>>>> 39111c6d0d7ef2407ecb31dfec6228fda68c640c
   "main": "server.js",
   "author": "Silvana Gjini",
   "license": "MIT",
