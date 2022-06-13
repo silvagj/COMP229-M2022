@@ -23,6 +23,5 @@ router.get('/services', DisplayServicePage);
 router.get('/contact', DisplayContactsPage);
 
 /* Temporary */
-router.get('/movie-list', DisplayMovieList);
-
+router.get(movie-list, DisplayMovieList);
 export default router;

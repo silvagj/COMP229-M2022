@@ -22,7 +22,7 @@ db.on("open", function(){
 });
 
 db.on("error", function(){
-  console.error(`Connection Error`); 
+  console.error(`Connection Error`);
 });
 // view engine setup
 app.set('views', path.join(__dirname, '../Views/'));
