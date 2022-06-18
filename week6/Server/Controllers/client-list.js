@@ -17,6 +17,7 @@ function DisplayClientList(req, res, next) {
 }
 exports.DisplayClientList = DisplayClientList;
 function DisplayAddPage(req, res, next) {
+    res.render('index', { title: 'Add', page: 'edit', client: '', displayName: (0, Util_1.UserDisplayName)(req) });
 }
 exports.DisplayAddPage = DisplayAddPage;
 function DisplayEditPage(req, res, next) {
