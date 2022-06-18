@@ -1,24 +1,19 @@
 "use strict";
-//IIFE
-(function () {
-    function Start() {
-        console.log("App Started!");
-        // use AJAX to read JSON file
-        // Step 1: Create a new XHR object
-        let XHR = new XMLHttpRequest();
-        // Step 2: Create the request
-        XHR.open("GET", "../data/data.json");
-        // Step 3: Send the request
-        XHR.send();
-        // Step 4: create an event listener/handler
-        XHR.addEventListener("readystatechange", function () {
-            if (XHR.readyState == 4 && XHR.status == 200) {
-                console.log("JSON Data:");
-                console.log("===========");
-                console.log(XHR.responseText);
-            }
-        });
-    }
-    window.addEventListener("load", Start);
-})();
+/*
+ *    Filename: app.ts
+ *    Student Name: Silvana Gjini
+ *    Student ID:301201477
+ *    Date:  16-Jun-2022
+ *
+ */
+const button = document.getElementById('send');
+button?.addEventListener('click', function send() {
+    //capture form information
+    let name = document.getElementById('name').value;
+    let email = document.getElementById('email').value;
+    let phone = document.getElementById('phone').value;
+    let message = document.getElementById('message').value;
+    //redirect to homepage
+    window.location.href = './home';
+});
 //# sourceMappingURL=app.js.map

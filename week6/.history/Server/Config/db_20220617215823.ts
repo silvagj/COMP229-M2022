@@ -1,0 +1,4 @@
+export const LocalURI ="mongodb://127.0.0.1/media";
+export const RemoteURI ="mongodb+srv://silvana:T6gZkz5dKGWnvBzb@cluster0.remhq.mongodb.net/?retryWrites=true&w=majority/media";
+export const HostName ="MongoDB Atlas";
+export const Secret ="someSecret";

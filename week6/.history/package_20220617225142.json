@@ -1,7 +1,7 @@
 {
-  "name": "comp229-s2022-assignment2",
+  "name": "comp229-s2022-Assignment2",
   "version": "0.0.5",
-  "description": "assignment 2",
+  "description": "Assignment 2 project",
   "main": "server.js",
   "author": "Silvana Gjini",
   "license": "MIT",
