@@ -3,7 +3,7 @@ const router = express.Router();
 
 import { AuthGuard } from '../Util';
 
-import { DisplayAddPage, DisplayClientList, DisplayEditPage, ProcessAddPage, ProcessDeletePage, ProcessEditPage } from '../Controllers/client-list';
+import { DisplayAddPage, DisplayClientList, DisplayEditPage, ProcessAddPage, ProcessDeletePage } from '../Controllers/client-list';
 /* Display Client List PAge */
 
 router.get('/client-list', AuthGuard, DisplayClientList);
