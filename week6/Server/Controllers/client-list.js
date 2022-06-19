@@ -45,7 +45,7 @@ function ProcessAddPage(req, res, next) {
         "Company": req.body.company,
         "Description": req.body.description
     });
-    // Insert the new Client object into the database (movies collection)
+    // Insert the new Client object into the database (clients collection)
     client_1.default.create(newClient, function (err) {
         if (err) {
             console.error(err);

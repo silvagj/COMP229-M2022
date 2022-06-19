@@ -1,0 +1,180 @@
+/*  
+Filename: app.css
+Student Name: Silvana Gjini
+StudentID: 301201477
+Date: 16-Jun-2022
+*/
+
+/* custom css here */
+body {
+    background-color: #f4f0f0;
+    font-family:helvetica-w01-light,helvetica-w02-light,sans-serif
+}
+
+/* Customizing navbar background color */
+.navbar-custom {
+    background-color: #bdb2af;  
+}
+
+/* Customizing homepage welcome note background color */
+
+.welcome-custom {
+    background-color: #bdb2af;
+
+}
+
+/* Customizing my services list background color */
+
+.my-services{
+    background-color: #bdb2af;
+
+}
+
+/* Customizing homepage background image */
+
+.background-custom {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center ; 
+}
+
+.project-one {
+    background-repeat: no-repeat;
+    background-position: center ; 
+    
+    
+}
+
+.project-three {
+    background-repeat: no-repeat;
+    background-position: center ; 
+    background-size: cover;
+    
+}
+
+.p1-content {
+    opacity: 1;
+    background-color: #bdb2af;
+}
+
+
+/* ------------------------- */
+/* Login  */
+/* ------------------------- */
+
+.input-group-addon:first-child
+{
+    border-right: 0;
+}
+
+.input-group-addon
+{
+    padding: 6px 12px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1;
+    text-align: center;
+    border: 1px solid darkgrey;
+    border-radius: 4xpx; 
+}
+
+.input-group-addon .fa
+{
+    font-size: 18px;
+}
+
+.input-group .form-control
+{
+    position:relative;
+    z-index: 2;
+    float:left;
+    margin-bottom: 0;
+}
+
+.input-group .form-control:last-child
+{
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+
+
+.login
+{
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
+    
+    border-radius: .3rem;
+}
+
+.login input
+{
+    background-color: white;
+    border-color: rgb(169, 169, 169);
+    border-radius: .4em;
+    width: 100%;
+}
+
+
+
+/* ------------------------- */
+/* Buttons  */
+/* ------------------------- */
+
+.login-btn
+{
+    width: 100%;
+   
+}
+
+.cancel-btn
+{
+    width: 100%;
+   
+}
+
+.register-btn
+
+{
+    width: 100%;
+   
+}
+
+.delete-btn
+{
+    background-color: rgb(240, 200, 200);
+}
+
+
+.delete-btn:hover
+{
+    background-color: rgb(231, 141, 141);
+}
+
+.edit-btn
+{
+    background-color: rgb(207, 221, 203);
+}
+
+
+.edit-btn:hover
+{
+    background-color: rgb(172, 199, 161);
+}
+
+.cancel-btn2
+{
+    background-color: rgb(245, 198, 98);
+}
+
+.cancel-btn2:hover
+{
+    background-color: rgb(199, 167, 97);
+}
+
+
+.input-group-text
+
+{
+    width:130px;
+}

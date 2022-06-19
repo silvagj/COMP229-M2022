@@ -51,11 +51,11 @@ const auth_1 = __importDefault(require("../Routes/auth")); // authentication rou
 const app = (0, express_1.default)();
 // Complete the DB Configuration
 const DBConfig = __importStar(require("./db"));
-mongoose_1.default.connect(DBConfig.RemoteURI);
+mongoose_1.default.connect(DBConfig.RemoteURI || DBConfig.LocalURI);
 const db = mongoose_1.default.connection; // alias for the mongoose connection
 // Listen for Connections or Errors
 db.on("open", function () {
-    console.log(`Connected to MongoDB at: ${DBConfig.HostName}`);
+    console.log(`Connected to MongoDB at: ${(DBConfig.RemoteURI) ? DBConfig.HostName : "localhost"}`);
 });
 db.on("error", function () {
     console.error(`Connection Error`);

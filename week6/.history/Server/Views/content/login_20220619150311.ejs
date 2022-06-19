@@ -1,0 +1,61 @@
+<div class="container">
+  <div class="row text-secondary text-center p-2">
+    <h2><%= title %></h2>
+</div>
+  <div class="row">
+    <div class="offset-md-3 col-md-6 col-sm-12 border text-secondary">
+          <div class="login" id="contentArea">
+            <p class="hint-text mb-4">Enter your credentials to login!</p>
+
+              <!-- Message Area -->
+              <% if(messages.length > 0) { %>
+                <div id="messageArea" class="alert alert-danger">
+                <%= messages %>
+              </div>
+              <% } %>
+
+              <form method="POST" id="loginForm" novalidate>
+                <div class="form-group mb-4">
+                  <div class="input-group">
+                    <span class="input-group-addon">
+                      <i class="fa fa-user">
+                      </i>
+                    </span>
+                    <input type="text" class="form-control" id="username" name="username"  required
+                    value="" placeholder="Enter your username">
+                  </div>
+                
+                </div>
+
+                <div class="form-group mb-4">
+                  <div class="input-group">
+                    <span class="input-group-addon">
+                      <i class="fa fa-lock">
+                      </i>
+                    </span>
+                    <input type="password" class="form-control" id="password" name="password"  required
+                    value="" placeholder="Enter your password">
+                  </div>
+                
+                </div>                                        
+                <div class="text-end">
+                  <div class="text-center text-md-left p-2">
+                    <button id="loginButton" type="submit" class="btn btn-success btn-lg">
+                      <i class="fas fa-sign-in-alt"></i>  Login  </button>
+                  </div>
+                  <div class="text-center text-md-left p-2">
+                    <button id="cancelButton" type="reset" class="btn btn-warning btn-sm">
+                      <i class="fas fa-undo"></i> Cancel</button>
+                  </div>
+                    
+                </div>
+              </form>
+            
+          </div>
+          <p class="text-center text-muted small">
+            Don't have an account? 
+            <a class="link" href="/register">Register Here!</a>
+          </p>
+    </div>
+  </div>
+</div>
