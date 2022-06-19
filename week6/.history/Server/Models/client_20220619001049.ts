@@ -10,16 +10,7 @@ const ClientSchema = new Schema
     Email: String,
     Company: String,
     Description: String,
-    Created:
-    {
-        type: Date,
-        default: Date.now()
-    },
-    Updated:
-    {
-        type: Date,
-        default: Date.now()
-    }
+    
 },
 {
     collection: "clients"

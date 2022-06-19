@@ -15,7 +15,7 @@ function DisplayClientListPage(req, res, next) {
             res.end(err);
         }
         res.render('index', { title: 'Client List', page: 'client-list', clients: clientsCollection, displayName: (0, Util_1.UserDisplayName)(req) });
-    });
+    }).sort({ FirstName: 1 });
 }
 exports.DisplayClientListPage = DisplayClientListPage;
 function DisplayAddPage(req, res, next) {
@@ -42,7 +42,8 @@ function ProcessAddPage(req, res, next) {
         "LastName": req.body.lastName,
         "Number": req.body.phoneNumber,
         "Email": req.body.emailAddress,
-        "Company": req.body.company
+        "Company": req.body.company,
+        "Description": req.body.description
     });
     // Insert the new Client object into the database (movies collection)
     client_1.default.create(newClient, function (err) {
@@ -60,10 +61,12 @@ function ProcessEditPage(req, res, next) {
     // instantiate a new Client to Edit
     let updatedClient = new client_1.default({
         "_id": id,
-        "Name": req.body.movieName,
-        "Director": req.body.movieDirector,
-        "Year": req.body.movieYear,
-        "Rating": req.body.movieRating
+        "FirstName": req.body.firstName,
+        "LastName": req.body.lastName,
+        "Number": req.body.phoneNumber,
+        "Email": req.body.emailAddress,
+        "Company": req.body.company,
+        "Description": req.body.description
     });
     // update the client in the database
     client_1.default.updateOne({ _id: id }, updatedClient, function (err) {

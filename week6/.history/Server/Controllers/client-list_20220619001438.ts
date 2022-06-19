@@ -52,8 +52,7 @@ export function ProcessAddPage(req: express.Request, res: express.Response, next
     "LastName": req.body.lastName,
     "Number": req.body.phoneNumber,
     "Email": req.body.emailAddress,
-    "Company": req.body.company,
-    "Description": req.body.description
+    "Company": req.body.company
   });
 
   // Insert the new Client object into the database (movies collection)
@@ -82,8 +81,7 @@ export function ProcessEditPage(req: express.Request, res: express.Response, nex
     "LastName": req.body.lastName,
     "Number": req.body.phoneNumber,
     "Email": req.body.emailAddress,
-    "Company": req.body.company,
-    "Description": req.body.description
+    "Company": req.body.company
   });
 
   // update the client in the database
