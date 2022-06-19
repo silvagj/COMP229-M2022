@@ -47,7 +47,6 @@ const user_1 = __importDefault(require("../Models/user"));
 // import the router data
 const index_1 = __importDefault(require("../Routes/index")); // top-level routes
 const client_list_1 = __importDefault(require("../Routes/client-list")); //client-list routes
-const movie_list_1 = __importDefault(require("../Routes/movie-list")); // movie-list routes
 const auth_1 = __importDefault(require("../Routes/auth")); // authentication routes
 const app = (0, express_1.default)();
 // Complete the DB Configuration
@@ -90,7 +89,6 @@ passport_1.default.deserializeUser(user_1.default.deserializeUser());
 // use routes
 app.use('/', index_1.default);
 app.use('/', client_list_1.default);
-app.use('/', movie_list_1.default);
 app.use('/', auth_1.default);
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

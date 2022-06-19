@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Secret = exports.HostName = exports.RemoteURI = exports.LocalURI = void 0;
 exports.LocalURI = "mongodb://127.0.0.1/media";
-exports.RemoteURI = "mongodb+srv://silvana:T6gZkz5dKGWnvBzb@cluster0.remhq.mongodb.net/media?retryWrites=true&w=majority";
+exports.RemoteURI = "mongodb+srv://silvana:T6gZkz5dKGWnvBzb@cluster0.remhq.mongodb.net/portfolio?retryWrites=true&w=majority";
 //export const RemoteURI = process.env.RemoteURI;
 exports.HostName = "MongoDB Atlas";
 exports.Secret = "someSecret";

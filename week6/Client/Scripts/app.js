@@ -16,4 +16,10 @@ button?.addEventListener('click', function send() {
     //redirect to homepage
     window.location.href = './home';
 });
+$("a.delete").on("click", function (event) {
+    if (!confirm("Are you sure?")) {
+        event.preventDefault();
+        location.href = "/client-list";
+    }
+});
 //# sourceMappingURL=app.js.map

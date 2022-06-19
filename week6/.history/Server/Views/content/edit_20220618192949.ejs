@@ -1,0 +1,55 @@
+<div class="container">
+  <h1 class="col-lg-6 col-md-10 col-sm-10"><%= title %> Client</h1>
+  <hr>
+  <div id="messageArea"></div>
+
+  <div class="row justify-content-lg-center g-3">
+    <form method="POST" class="col-lg-6 col-md-10 col-sm-10">
+
+      <div class="input-group mb-3">
+        <span class="input-group-text">First Name</span>
+        <input id="firstName" name="firstName" type="text" class="form-control" 
+        value="<%= client.FirstName %>"
+        aria-label="First Name" aria-describedby="First Name Input" required>
+      </div>
+
+      <div class="input-group mb-3">
+          <span class="input-group-text">Last Name</span>
+          <input id="lastName" name="lastName" type="text" class="form-control" 
+          value="<%= client.LastName %>"
+          aria-label="Last Name" aria-describedby="Last Name Input" required>
+        </div>
+
+      <div class="input-group mb-3">
+      <span class="input-group-text">Phone Number</span>
+      <input id="phoneNumber" name="phoneNumber" type="text" class="form-control" 
+      value="<%= client.Number %>"
+      aria-label="Phone Number" aria-describedby="Phone Number Input" required>
+      </div>
+
+      <div class="input-group mb-3">
+      <span class="input-group-text">Email Address</span>
+      <input id="emailAddress" name="emailAddress" type="text" class="form-control" 
+      value="<%= client.Email %>"
+      aria-label="Email Address" aria-describedby="Email Address Input" required>
+      </div>
+
+      <div class="input-group mb-3">
+        <span class="input-group-text">Company</span>
+        <input id="company" name="company" type="text" class="form-control" 
+        value="<%= client.Company %>"
+        aria-label="Company" aria-describedby="Company Input" required>
+        </div>
+      
+      <% if(title == "Edit") { %>
+      <button id="editButton" type="submit" class="btn btn-primary"><i class="fas fa-edit fa-lg"></i> Edit</button>
+      <% } else {%>
+      <button id="addButton" type="submit" class="btn btn-primary"><i class="fas fa-plus-circle fa-lg"></i> Add</button>
+      <% } %>  
+
+      <a href="/client-list" id="cancelButton" type="button" class="btn btn-warning"><i class="fas fa-undo fa-lg"></i> Cancel</a>
+    
+    </form>
+
+  </div>
+</div>

@@ -12,15 +12,7 @@ const ClientSchema = new Schema({
     LastName: String,
     Number: String,
     Email: String,
-    Company: String,
-    Created: {
-        type: Date,
-        default: Date.now()
-    },
-    Updated: {
-        type: Date,
-        default: Date.now()
-    }
+    Company: String
 }, {
     collection: "clients"
 });

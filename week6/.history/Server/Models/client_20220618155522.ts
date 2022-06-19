@@ -2,17 +2,18 @@
 import mongoose from 'mongoose';
 const Schema = mongoose.Schema; //alias for mongoose.Schema
 //Step2 Create a schema that matches the data
-const MovieSchema = new Schema
+const ClientSchema = new Schema
 ({
-    Name: String,
-    Year: String,
-    Director: String,
-    Rating: String
+    FirstName: String,
+    LastName: String,
+    Number: String,
+    Email: String,
+    Company: String
 },
 {
-    collection: "movies"
+    collection: "clients"
 })
 //Step3 Create a Model using the Schema
-const Model = mongoose.model("Movies", MovieSchema);
+const Model = mongoose.model("Clients", ClientSchema);
 //Step4 Export the Model -- This makes the file a module
 export default Model;
