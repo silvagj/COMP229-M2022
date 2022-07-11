@@ -7,10 +7,6 @@ const express_1 = __importDefault(require("express"));
 const router = express_1.default.Router();
 // import the controller module
 const auth_1 = require("../Controllers/auth");
-/* Display Login page. */
-router.get('/login', auth_1.DisplayLoginPage);
-/* Display Register page. */
-router.get('/register', auth_1.DisplayRegisterPage);
 /* Process Login page. */
 router.post('/login', auth_1.ProcessLoginPage);
 /* Process Register page. */

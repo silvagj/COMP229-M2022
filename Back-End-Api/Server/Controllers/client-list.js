@@ -6,7 +6,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.ProcessDeletePage = exports.ProcessEditPage = exports.ProcessAddPage = exports.DisplayEditPage = exports.DisplayAddPage = exports.DisplayClientListPage = void 0;
 // import the Client Model
 const client_1 = __importDefault(require("../Models/client"));
-const Util_1 = require("../Util");
 function DisplayClientListPage(req, res, next) {
     client_1.default.find(function (err, clientsCollection) {
         // Database error
@@ -15,12 +14,12 @@ function DisplayClientListPage(req, res, next) {
             res.end(err);
         }
         // res.render('index', { title: 'Client List', page: 'client-list', clients: clientsCollection, displayName:  UserDisplayName(req)  });
-        res.json({ success: true, msg: 'Client-List Displayed Successfully', clients: clientsCollection, displayName: (0, Util_1.UserDisplayName)(req) });
+        res.json({ success: true, msg: 'Client-List Displayed Successfully', clients: clientsCollection, user: req.user });
     }).sort({ FirstName: 1 });
 }
 exports.DisplayClientListPage = DisplayClientListPage;
 function DisplayAddPage(req, res, next) {
-    res.render('index', { title: 'Add', page: 'edit', clientlist: '', displayName: (0, Util_1.UserDisplayName)(req) });
+    res.json({ success: true, msg: 'Add Page Displayed Successfully!' });
 }
 exports.DisplayAddPage = DisplayAddPage;
 function DisplayEditPage(req, res, next) {
@@ -32,7 +31,7 @@ function DisplayEditPage(req, res, next) {
             res.end(err);
         }
         // show the edit view with the data
-        res.render('index', { title: 'Edit', page: 'edit', clientlist: clientToEdit, displayName: (0, Util_1.UserDisplayName)(req) });
+        res.json({ success: true, msg: 'Edit Page Displayed Successfully', client: clientToEdit });
     });
 }
 exports.DisplayEditPage = DisplayEditPage;
@@ -53,7 +52,7 @@ function ProcessAddPage(req, res, next) {
             res.end(err);
         }
         // new client has been added -> refresh the client-list
-        res.redirect('/client-list');
+        res.json({ success: true, msg: 'Successfully Added Client', client: newClient });
     });
 }
 exports.ProcessAddPage = ProcessAddPage;
@@ -76,7 +75,7 @@ function ProcessEditPage(req, res, next) {
             res.end(err);
         }
         // edit was successful -> go to the client-list page
-        res.redirect('/client-list');
+        res.json({ success: true, msg: 'Successfully Edited Client', client: updatedClient });
     });
 }
 exports.ProcessEditPage = ProcessEditPage;
@@ -89,7 +88,7 @@ function ProcessDeletePage(req, res, next) {
             res.end(err);
         }
         // delete was successful
-        res.redirect('/client-list');
+        res.json({ success: true, msg: 'Successfully Deleted Client' });
     });
 }
 exports.ProcessDeletePage = ProcessDeletePage;

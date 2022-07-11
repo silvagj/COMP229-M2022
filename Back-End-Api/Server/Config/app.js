@@ -40,6 +40,10 @@ const passport_local_1 = __importDefault(require("passport-local"));
 const connect_flash_1 = __importDefault(require("connect-flash"));
 // modules for JWT support
 const cors_1 = __importDefault(require("cors"));
+const passport_jwt_1 = __importDefault(require("passport-jwt"));
+//define JWT aliases
+let JWTStrategy = passport_jwt_1.default.Strategy;
+let ExtractJWT = passport_jwt_1.default.ExtractJwt;
 // Step 2 for auth - define our auth objects
 let localStrategy = passport_local_1.default.Strategy; // alias
 // Step 3 for auth - import the user model
@@ -85,9 +89,26 @@ passport_1.default.use(user_1.default.createStrategy());
 // Step 8 - setup User serialization and deserialization (encoding and decoding)
 passport_1.default.serializeUser(user_1.default.serializeUser());
 passport_1.default.deserializeUser(user_1.default.deserializeUser());
+user_1.default;
+//setup JWT options
+let jwtOptions = {
+    jwtFromRequest: ExtractJWT.fromAuthHeaderAsBearerToken(),
+    secretOrKey: DBConfig.Secret
+};
+// setup JWT Strategy
+let strategy = new JWTStrategy(jwtOptions, function (jwt_payload, done) {
+    user_1.default.findById(jwt_payload.id)
+        .then(user => {
+        return done(null, user);
+    })
+        .catch(err => {
+        return done(err, false);
+    });
+});
+passport_1.default.use(strategy);
 // use routes
-app.use('/api', client_list_1.default); //identifying the routes as api endpoints
 app.use('/api', auth_1.default);
+app.use('/api', passport_1.default.authenticate('jwt', { session: false }), client_list_1.default); //identifying the routes as api endpoints
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
     next((0, http_errors_1.default)(404));
